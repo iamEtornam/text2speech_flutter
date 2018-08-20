@@ -38,6 +38,9 @@ class _HomePageState extends State<HomePage> {
     );
 
     return Scaffold(
+      appBar: new AppBar(
+        title: new Text('Text2Speech'),
+      ),
       backgroundColor: Colors.white,
       body: Center(
         child: ListView(
