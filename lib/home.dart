@@ -57,7 +57,7 @@ class _HomePageState extends State<HomePage> {
           onPressed: () {
            Tts.speak(myController.text);
           },
-          color: Colors.lightBlueAccent,
+          color: Colors.blue,
           child: Text('Speak to me', style: TextStyle(color: Colors.white)),
         ),
       ),
