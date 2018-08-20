@@ -1,4 +1,7 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
+import 'package:tts/tts.dart';
 
 class HomePage extends StatefulWidget {
   static String tag = 'home';
@@ -7,9 +10,32 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final myController = TextEditingController();
+  String languageAvailableText = '';
+  List<String> languages;
+  Random rng = new Random();
+  @override
+  initState() {
+    super.initState();
+    initPlatformState();
+  }
+
+  // Platform messages are asynchronous, so we initialize in an async method.
+  initPlatformState() async {
+    // Platform messages may fail, so we use a try/catch PlatformException.
+
+    languages = await Tts.getAvailableLanguages();
+    // If the widget was removed from the tree while the asynchronous platform
+    // message was in flight, we want to discard the reply rather than calling
+    // setState to update our non-existent appearance.
+    if (!mounted)
+      return;
+  }
+
   @override
   Widget build(BuildContext context){
-    final text = TextFormField(
+    final text = TextField(
+      controller: myController,
       keyboardType: TextInputType.multiline,
       autofocus: false,
       decoration: InputDecoration(
@@ -29,7 +55,7 @@ class _HomePageState extends State<HomePage> {
           minWidth: 200.0,
           height: 42.0,
           onPressed: () {
-            //add action here
+           Tts.speak(myController.text);
           },
           color: Colors.lightBlueAccent,
           child: Text('Speak to me', style: TextStyle(color: Colors.white)),
