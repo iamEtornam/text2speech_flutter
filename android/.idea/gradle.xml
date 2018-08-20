@@ -7,7 +7,6 @@
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="modules">
           <set>
-            <option value="$USER_HOME$/AppData/Roaming/Pub/Cache/hosted/pub.dartlang.org/fluttertoast-2.0.7/android" />
             <option value="$USER_HOME$/AppData/Roaming/Pub/Cache/hosted/pub.dartlang.org/tts-1.0.1/android" />
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
