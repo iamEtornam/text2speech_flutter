@@ -1,10 +1,15 @@
 name: text2speech_flutter
 description: A new Flutter application that converts text to audio
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.16.2 <3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
-  tts: ^1.0.1
+  flutter_tts: ^3.6.3
 
 
   # The following adds the Cupertino Icons font to your application.
